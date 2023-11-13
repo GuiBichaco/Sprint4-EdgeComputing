@@ -21,8 +21,6 @@ Com o software Arduino IDE, você deverá desenvolver seu código de acordo com 
 
 Ao terminar o código, vá em "Verify", "Sketch", "Export Compiled Binary". Logo em seguida, vá em "File", "Save As" e salve o arquivo no local desejado.
 
-**-> SimulIDE**
-
 **-> Wokwi**
 
 Com o software online de acesso (https://wokwi.com) WOKWI, você deverá desenvolver seu código de acordo com o uso da sua placa. A linguagem adequada é o C++ (nossos códigos-fonte estarão mais abaixo desta documentação). A plataforma Wokwi é responsável pela compilação do código programado para o seu circuito em C++ para ser lido pela firmware da placa.
