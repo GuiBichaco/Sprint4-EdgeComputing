@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "author": "Guilherme - Comercial",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -4.9, "left": 62.2, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -70.8,
+      "left": 234.2,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 4.8,
+      "left": 249.05,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -70.8,
+      "left": 311,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 4.8,
+      "left": 325.85,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": -299.6, "left": 201.6, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo2", "top": -213.2, "left": 220.8, "attrs": {} },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": -54.4,
+      "left": -162.4,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.1", "led1:C", "black", [ "h57.38", "v-24.75", "h-0.26" ] ],
+    [ "led1:A", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "esp:D15", "green", [ "h0" ] ],
+    [ "led3:C", "esp:GND.1", "black", [ "v0" ] ],
+    [ "led3:A", "r3:1", "red", [ "v0" ] ],
+    [ "r3:2", "esp:D4", "red", [ "h0", "v66" ] ],
+    [ "servo2:PWM", "esp:D2", "magenta", [ "h0", "v259.4" ] ],
+    [ "esp:D5", "servo1:PWM", "purple", [ "h9.3", "v-326.4" ] ],
+    [ "servo1:GND", "esp:GND.1", "black", [ "h-19.2", "v345.6" ] ],
+    [ "servo2:GND", "esp:GND.2", "black", [ "h-9.6", "v355.2", "h-163.2", "v-67.2", "h28.8" ] ],
+    [ "servo2:V+", "esp:VIN", "red", [ "h-19.2", "v355.3", "h-144", "v-67.2" ] ],
+    [ "servo1:V+", "esp:VIN", "red", [ "h-220.8", "v403.3" ] ],
+    [ "ldr1:DO", "esp:D12", "green", [ "h19.2", "v124.2", "h9.6" ] ],
+    [ "ldr1:GND", "esp:GND.2", "black", [ "h38.4", "v153.3" ] ],
+    [ "ldr1:VCC", "esp:3V3", "red", [ "h48", "v220.8", "h124.8", "v-48" ] ]
+  ],
+  "dependencies": {}
+}

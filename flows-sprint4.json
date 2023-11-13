@@ -1,0 +1,129 @@
+[
+    {
+        "id": "21dfdcedaf5ae75d",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cfc8b8a31a32a10a",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "42764564d56a2b4b",
+        "type": "inject",
+        "z": "21dfdcedaf5ae75d",
+        "name": "Luz Alta",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "180",
+        "payloadType": "num",
+        "x": 230,
+        "y": 120,
+        "wires": [
+            [
+                "dc329c367f42ee7f",
+                "c70bf0a4bcc8e57a"
+            ]
+        ]
+    },
+    {
+        "id": "7cae1f2384d8fa11",
+        "type": "inject",
+        "z": "21dfdcedaf5ae75d",
+        "name": "Luz Baixa",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 240,
+        "y": 200,
+        "wires": [
+            [
+                "c70bf0a4bcc8e57a",
+                "dc329c367f42ee7f"
+            ]
+        ]
+    },
+    {
+        "id": "c70bf0a4bcc8e57a",
+        "type": "mqtt out",
+        "z": "21dfdcedaf5ae75d",
+        "name": "Servo1",
+        "topic": "sprint4/iot/servo1",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "cfc8b8a31a32a10a",
+        "x": 440,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "dc329c367f42ee7f",
+        "type": "mqtt out",
+        "z": "21dfdcedaf5ae75d",
+        "name": "Servo2",
+        "topic": "sprint4/iot/servo2",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "cfc8b8a31a32a10a",
+        "x": 440,
+        "y": 200,
+        "wires": []
+    }
+]
